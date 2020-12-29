@@ -1,0 +1,5 @@
+rabbitmq demo 搭建
+1.windows 机器上安装rabbit 失败
+问题原因：Erlang 和 RabbitMQ 版本不匹配，并且有安装顺序，首先安装完erlang 在安装rabbitmq
+参考文档：https://www.jianshu.com/p/c7726ba4b046
+
