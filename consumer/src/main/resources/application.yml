@@ -1,0 +1,48 @@
+#数据库配置
+spring:
+  datasource:
+    schema: classpath:databaseManager/schema.sql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot
+    password: gu784341
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+
+  #rabbitmq product
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 30000
+
+  #开启return模式
+    publisher-returns: true
+  #配合return模式，接收路由不可达消息
+    template:
+      mandatory: true
+    #开启confirm,类型
+    publisher-confirm-type: simple
+
+mybatis:
+  #实体类
+  type-aliases-package: com.example.consumer.entity
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+

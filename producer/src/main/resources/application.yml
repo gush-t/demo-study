@@ -1,0 +1,36 @@
+#rabbitmq consumer
+spring:
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 15000
+
+    listener:
+      simple:
+        #设置签收模式，auto 自动签收，manual 手动签收 none (不签收，没有任何操作)
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+#数据库配置
+  datasource:
+    schema: classpath:databaseManager/schema.sql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot
+    password: gu784341
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20

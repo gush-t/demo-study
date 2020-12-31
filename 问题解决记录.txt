@@ -1,5 +1,44 @@
 rabbitmq demo 搭建
 1.windows 机器上安装rabbit 失败
 问题原因：Erlang 和 RabbitMQ 版本不匹配，并且有安装顺序，首先安装完erlang 在安装rabbitmq
-参考文档：https://www.jianshu.com/p/c7726ba4b046
+百度网盘下载地址：
+链接：https://pan.baidu.com/s/1n18D_64tdVdDLDSXtE4r8w
+提取码：vbxm
 
+官方文档：https://www.rabbitmq.com/which-erlang.html
+安装参考文档：https://www.jianshu.com/p/c7726ba4b046
+
+
+2.idea 使用项目同步提价
+参考文档：https://www.jb51.net/article/191228.htm
+
+3.连接数据库报错：yml 中数据username路径不对
+参考文档：https://blog.csdn.net/qq_19677511/article/details/96451799
+
+4.rabbitmq连接被拒绝refused
+默认guest账号只可以在本机连接，并且Ip为127.0.0.1
+参考文档：https://www.rabbitmq.com/access-control.html
+
+
+
+# THYMELEAF (ThymeleafAutoConfiguration)
+# 开启模板缓存（默认值： true ）
+  spring.thymeleaf.cache=true
+  # 检查模板是否存在，然后再呈现
+  spring.thymeleaf.check-template=true
+  # 检查模板位置是否正确（默认值 :true ）
+  spring.thymeleaf.check-template-location=true
+  #Content-Type 的值（默认值： text/html ）
+  spring.thymeleaf.content-type=text/html
+  # 开启 MVC Thymeleaf 视图解析（默认值： true ）
+  spring.thymeleaf.enabled=true
+  # 模板编码
+  spring.thymeleaf.encoding=UTF-8
+  # 要被排除在解析之外的视图名称列表，⽤逗号分隔
+  spring.thymeleaf.excluded-view-names=
+  # 要运⽤于模板之上的模板模式。另⻅ StandardTemplate-ModeHandlers( 默认值： HTML5)
+  spring.thymeleaf.mode=HTML5
+  # 在构建 URL 时添加到视图名称前的前缀（默认值： classpath:/templates/ ）
+  spring.thymeleaf.prefix=classpath:/templates/
+  # 在构建 URL 时添加到视图名称后的后缀（默认值： .html ）
+  spring.thymeleaf.suffix=.html
