@@ -12,6 +12,7 @@ public class Generics {
      * 上界 extends <? extends T></>  类型必须是T或者是T的子类
      * 下界 super <? super T></> 类型必须是T或者T的父类
      * 非限定通配符 T
+     * 泛型的应用场景，在数据存取元素使用下界super，获取元素使用上界 extends
      *
      *
      */
