@@ -103,10 +103,13 @@ public class StreamStudy {
     public static void main(String[] args) {
         streamTest();
         Season[] seasons =  Season.values();
+        System.out.println(Season.SPRING.getCode());
         for (Season s: seasons) {
             System.out.println(s.name());
             System.out.println(s.getCode());
         }
+        Single single = Single.PEOPLE;
+        System.out.println(single.getCode()+"  "+single.getName());
     }
 
 

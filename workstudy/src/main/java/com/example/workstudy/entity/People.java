@@ -1,9 +1,12 @@
 package com.example.workstudy.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class People implements Supplier {
+public class People implements Supplier, Serializable {
+
+
 
     private String peopleName;
 
