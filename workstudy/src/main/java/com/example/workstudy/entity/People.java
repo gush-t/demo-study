@@ -1,13 +1,19 @@
 package com.example.workstudy.entity;
 
+import com.example.workstudy.jdk.MyAnnotation;
+
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class People implements Supplier, Serializable {
+public class People implements Supplier, Consumer, Function, Predicate, Serializable {
 
 
 
+    @MyAnnotation
     private String peopleName;
 
     private Integer age;
@@ -17,6 +23,8 @@ public class People implements Supplier, Serializable {
     private String sex;
 
     private String area;
+
+    private boolean enable;
 
     public People() {
     }
@@ -103,8 +111,31 @@ public class People implements Supplier, Serializable {
         this.area = area;
     }
 
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
     @Override
     public Object get() {
         return this.toString();
+    }
+
+    @Override
+    public void accept(Object o) {
+
+    }
+
+    @Override
+    public Object apply(Object o) {
+        return null;
+    }
+
+    @Override
+    public boolean test(Object o) {
+        return false;
     }
 }

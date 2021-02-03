@@ -5,4 +5,9 @@ public class StaticProxyImpl implements StaticProxy{
     public void say() {
         System.out.println("静态代理");
     }
+
+    @Override
+    public void eat() {
+        System.out.println("新增接口");
+    }
 }
