@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.jdktest.mapper.WorkerMapper">
+    <select id="findAll" resultType="com.example.jdktest.entity.Worker">
+        SELECT * FROM Worker
+    </select>
+
+    <select id="findById" resultType="com.example.jdktest.entity.Worker">
+        SELECT * FROM Worker where id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM Worker where id = #{id}
+    </delete>
+
+    <update id="updateWorker" parameterType="com.example.jdktest.entity.Worker">
+        UPDATE Worker set
+        workerName = #{workerName},
+        newWorker = #{newWorker},
+        entryTime = #{entryTime}
+        where id = #{id}
+    </update>
+
+    <insert id="add" parameterType="com.example.jdktest.entity.Worker">
+        INSERT into Worker (workerName,newWorker,entryTime)
+        values (#{workerName},#{newWorker},#{entryTime})
+    </insert>
+</mapper>
