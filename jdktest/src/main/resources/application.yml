@@ -12,8 +12,8 @@ spring:
 #mybatis 配置
 mybatis:
   #数据访问dao映射实现方法
-  config-locations: classpath:mapper/*Mapper.xml
-  #
+  #实体类所在的包路径
   type-aliases-package: com.example.jdktest.entity
+  mapper-locations: classpath:mapper/*.xml
 ---
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.jdktest.mapper.StudentMapper">
+    <select id="findAll" resultType="com.example.jdktest.entity.Student">
+        SELECT * FROM student
+    </select>
+    <select id="findById" resultType="com.example.jdktest.entity.Student" parameterType="Integer">
+        SELECT * FROM student where id = #{id}
+    </select>
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM student where id = #{id}
+    </delete>
+    <update id="update" parameterType="com.example.jdktest.entity.Student">
+        UPDATE student set
+                           stuName = #{stuName},
+                           stuClass = #{stuClass},
+                           stuSchool = #{stuSchool}
+        where id = #{id}
+    </update>
+    <insert id="add" parameterType="com.example.jdktest.entity.Student">
+        INSERT into student (stuName,stuClass,stuSchool)
+        values (#{stuName},#{stuClass},#{stuSchool})
+    </insert>
+</mapper>

@@ -4,6 +4,7 @@ import com.example.jdktest.entity.Worker;
 import com.example.jdktest.servie.WorkerService;
 import com.example.jdktest.servie.impl.WorkerServiceImpl;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class WorkerController {
     /**
      * restController 注解包含controller responseBody 两个注解的组合注解
      */
+    @Autowired
     private WorkerService workerService;
 
     @GetMapping
