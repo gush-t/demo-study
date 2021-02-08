@@ -6,15 +6,7 @@ import com.example.jdktest.entity.Worker;
 import java.util.List;
 
 
-public interface WorkerService  {
-    int add(Worker t);
+public interface WorkerService extends BaseService<Worker> {
 
-    int deleteById(Integer id);
-
-    int update(Worker t);
-
-    Worker findById(Integer id);
-
-    List<Worker> findAll();
 
 }

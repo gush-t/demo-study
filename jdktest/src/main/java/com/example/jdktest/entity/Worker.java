@@ -1,5 +1,6 @@
 package com.example.jdktest.entity;
 
+import com.example.jdktest.vo.WorkerVO;
 import com.fasterxml.jackson.databind.ser.Serializers;
 
 import java.io.Serializable;
@@ -12,13 +13,12 @@ public class Worker implements Serializable {
     private Integer id;
     private String workerName;
     private boolean newWorker;
-
     private Date entryTime;
 
     public Worker() {
     }
 
-    public Worker(String workerName, Integer id, boolean newWorker, Date entryTime) {
+    public Worker(Integer id,String workerName,  boolean newWorker, Date entryTime) {
         this.workerName = workerName;
         this.id = id;
         this.newWorker = newWorker;
@@ -29,6 +29,12 @@ public class Worker implements Serializable {
         this.workerName = workerName;
         this.newWorker = newWorker;
         this.entryTime = entryTime;
+    }
+
+    public Worker(WorkerVO worker) {
+        this.entryTime = worker.getEntryTime();
+        this.workerName = worker.getWorkerName();
+        this.newWorker = worker.isNewWorker();
     }
 
     @Override

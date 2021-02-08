@@ -17,7 +17,7 @@
         entryTime = #{entryTime}
         where id = #{id}
     </update>
-    <insert id="add" parameterType="com.example.jdktest.entity.Worker">
+    <insert id="add" parameterType="com.example.jdktest.entity.Worker" useGeneratedKeys="true" keyProperty="id">
         INSERT into worker (workerName,newWorker,entryTime)
         values (#{workerName},#{newWorker},#{entryTime})
     </insert>
