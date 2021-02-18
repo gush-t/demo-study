@@ -27,6 +27,6 @@ public class ThirdInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
         logger.info("[afterCompletion[nowTime({})]]", LocalDateTime.now());
-        throw new RuntimeException("AfterCompletion Exception");
+        //throw new RuntimeException("AfterCompletion Exception");
     }
 }

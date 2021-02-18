@@ -16,7 +16,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public int add(Student t) {
-        return studentMapper.add(t);
+        return studentMapper.insert(t);
     }
 
     @Override
@@ -26,12 +26,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public int update(Student t) {
-        return studentMapper.update(t);
+        return studentMapper.updateById(t);
     }
 
     @Override
     public Student findById(Integer id) {
-        return studentMapper.findById(id);
+        return studentMapper.selectById(id);
     }
 
     @Override

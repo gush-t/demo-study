@@ -1,6 +1,6 @@
 ---
 spring:
-  #连接数据库，驱动，用户名，密码，url路径
+#连接数据库，驱动，用户名，密码，url路径 单个数据源
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -8,12 +8,84 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/springboot?serverTimezone=Asia/Shanghai
     schema: classpath:sql/*.sql
     initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      min-idle: 10
+      max-active: 20
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 0
+      stat-view-servlet:
+        enabled: true
+        login-username: gushaohua
+        login-password: gushaohua
+
+## 多个数据源
+#  datasource:
+#    #学生数据源配置
+#    student:
+#      url: jdbc:mysql://127.0.0.1:3306/student?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#      driver-class-name: com.mysql.jdbc.Driver
+#      username: root
+#      password: gu784341
+#      schema: classpath:sql/*.sql
+#      initialization-mode: always
+#      type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+#      # Druid 自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+#      min-idle: 0 # 池中维护的最小空闲连接数，默认为 0 个。
+#      max-active: 20 # 池中最大连接数，包括闲置和使用中的连接，默认为 8 个。
+#    worker:
+#      url: jdbc:mysql://127.0.0.1:3306/worker?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#      driver-class-name: com.mysql.jdbc.Driver
+#      username: root
+#      password: gu784341
+#      schema: classpath:sql/*.sql
+#      initialization-mode: always
+#      type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+#      # Druid 自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+#      min-idle: 0 # 池中维护的最小空闲连接数，默认为 0 个。
+#      max-active: 20 # 池中最大连接数，包括闲置和使用中的连接，默认为 8 个。
+#    druid:
+#      # 过滤器配置
+#      filter:
+#        stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+#          log-slow-sql: true # 开启慢查询记录
+#          slow-sql-millis: 5000 # 慢 SQL 的标准，单位：毫秒
+#      # StatViewServlet 配置
+#      stat-view-servlet: # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+#        enabled: true # 是否开启 StatViewServlet
+#        login-username: gushaohua # 账号
+#        login-password: gushaohua # 密码
   #建表SQL文件地址
 #mybatis 配置
-mybatis:
-  #数据访问dao映射实现方法
-  #实体类所在的包路径
-  type-aliases-package: com.example.jdktest.entity
+#mybatis:
+#  #数据访问dao映射实现方法
+#  #实体类所在的包路径
+#  type-aliases-package: com.example.jdktest.entity
+#  mapper-locations: classpath:mapper/*.xml
+#  config-location: classpath:mapperConfig/*.xml
+
+#mybatis-plus:
+mybatis-plus:
+  config-location: classpath:mapperConfig/*.xml
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.jdktest.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+logging:
+  level:
+    # dao 层开启 debug 日志记录模式
+    com:
+      example:
+        jdktest:
+          mapper:
+            BaseMapper: debug
+
 ---
 
