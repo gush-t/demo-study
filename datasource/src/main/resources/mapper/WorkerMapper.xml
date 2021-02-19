@@ -1,41 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.jdktest.mapper.WorkerMapper">
+<mapper namespace="com.example.datasource.dao.WorkerMapper">
     <select id="FIELDS">
         id,workerName,newWorker,entryTime
     </select>
 
-    <select id="findAll" resultType="com.example.jdktest.entity.Worker">
-        SELECT
-               <include refid="FIELDS"/>
-        FROM worker
-    </select>
-    <select id="findById" resultType="com.example.jdktest.entity.Worker" parameterType="Integer">
-        SELECT
-            <include refid="FIELDS"/>
-        FROM worker
-        where id = #{id}
-    </select>
-    <delete id="deleteById" parameterType="Integer">
-        DELETE FROM worker where id = #{id}
-    </delete>
-    <update id="update" parameterType="com.example.jdktest.entity.Worker">
-        UPDATE worker
-            <set>
-                <if test="workName != null">
-                    ,workerName = #{workerName}
-                </if>
-                <if test="newWorker !=null">
-                    ,newWorker = #{newWorker}
-                </if>
-                <if test="entryTime !=null">
-                    ,entryTime =#{entryTime}
-                </if>
-            </set>
-        where id = #{id}
-    </update>
-    <insert id="add" parameterType="com.example.jdktest.entity.Worker" useGeneratedKeys="true" keyProperty="id">
-        INSERT into worker (workerName,newWorker,entryTime)
-        values (#{workerName},#{newWorker},#{entryTime})
-    </insert>
+
 </mapper>

@@ -5,14 +5,14 @@ spring:
       # 所有数据源的名字
       names: ds-student, ds-worker
       # 订单 orders 数据源配置
-      ds-orders:
+      ds-student:
         type: com.zaxxer.hikari.HikariDataSource # 使用 Hikari 数据库连接池
         driver-class-name: com.mysql.jdbc.Driver
         jdbc-url: jdbc:mysql://127.0.0.1:3306/test_student?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
         password: gu784341
       # 订单 users 数据源配置
-      ds-users:
+      ds-worker:
         type: com.zaxxer.hikari.HikariDataSource # 使用 Hikari 数据库连接池
         driver-class-name: com.mysql.jdbc.Driver
         jdbc-url: jdbc:mysql://127.0.0.1:3306/test_worker?useSSL=false&useUnicode=true&characterEncoding=UTF-8
@@ -27,9 +27,8 @@ spring:
         # users 表配置
         worker:
           actualDataNodes: ds-worker.worker # 映射到 ds-users 数据源的 users 表
-
 # mybatis 配置内容
-mybatis:
-  config-location: classpath:mybatis-config/*.xml # 配置 MyBatis 配置文件路径
-  mapper-locations: classpath:mapper/*.xml # 配置 Mapper XML 地址
-  type-aliases-package: com.example.datasource.entity # 配置数据库实体包路径
+mybatis-plus:
+  #config-location: classpath:mybatis-config/*.xml # 配置 MyBatis 配置文件路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.datasource.entity

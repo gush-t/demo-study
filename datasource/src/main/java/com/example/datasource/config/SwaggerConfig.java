@@ -1,18 +1,10 @@
 package com.example.datasource.config;
 
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 import java.util.ArrayList;
 
 @Configuration
-@EnableSwagger2
+//@EnableSwagger2
 public class SwaggerConfig {
     /**
      * swagger 没有和springboot进行自动适配
@@ -22,7 +14,7 @@ public class SwaggerConfig {
      * 3个条件，配置类，条件注解，配置属性
      */
 
-    public Docket docker(){
+   /* public Docket docker(){
         // 构造函数传入初始化规范，这是swagger2规范
         return new Docket(DocumentationType.SWAGGER_2)
                 //apiInfo： 添加api详情信息，参数为ApiInfo类型的参数，这个参数包含了第二部分的所有信息比如标题、描述、版本之类的，开发中一般都会自定义这些信息
@@ -50,5 +42,5 @@ public class SwaggerConfig {
                 "许可链接：XXX", // 许可连接
                 new ArrayList<>()// 扩展
         );
-    }
+    }*/
 }
