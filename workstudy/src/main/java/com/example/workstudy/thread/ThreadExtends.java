@@ -9,6 +9,7 @@ public class ThreadExtends extends Thread{
     private static final ThreadLocal<Map<String,String>> theadLocal = new ThreadLocal<Map<String, String>>();
 
     private  volatile int ticket = 100;
+    private volatile boolean flag = true;
 
     private String str = "synchronized";
 
@@ -36,21 +37,39 @@ public class ThreadExtends extends Thread{
         }
     }*/
 
-    @Override
+    /*@Override
     public void run() {
         synchronized (str){
         while (true){
-
                     if (ticket > 0) {
                         ticket = ticket - 1;
                         System.out.println("sell ticket surplus:" + ticket);
                     }
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(1);
+                        Thread.yield();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
         }
+    }*/
+
+    @Override
+    public void run() {
+        while (flag){
+            System.out.println("interrupt");
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                break;
+            }
+        }
+        System.out.println("Thread terminal");
+    }
+
+    public  void setFlag(boolean flag) {
+        this.flag = flag;
     }
 }
