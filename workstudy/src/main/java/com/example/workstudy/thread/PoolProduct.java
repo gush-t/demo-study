@@ -1,7 +1,6 @@
 package com.example.workstudy.thread;
 
 import java.util.Random;
-import java.util.concurrent.BlockingDeque;
 
 public class PoolProduct implements Runnable{
 
