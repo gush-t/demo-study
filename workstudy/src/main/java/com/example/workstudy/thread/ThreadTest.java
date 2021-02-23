@@ -1,5 +1,8 @@
 package com.example.workstudy.thread;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 
@@ -100,12 +103,31 @@ public class ThreadTest {
      * 生产和消费者
      */
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         LinkedBlockingDeque<IPhone> blockingDeque = new LinkedBlockingDeque<>(10);
         ExecutorService product = Executors.newFixedThreadPool(3);
         ExecutorService consumer = Executors.newFixedThreadPool(3);
 
 
+    }*/
+    public static void main(String[] args) {
+        String a = "123";
+        String b = "123";
+        System.out.println(a== b);
+        StringBuffer stringBuffer = new StringBuffer("123");
+        modify(stringBuffer);
+        System.out.println(stringBuffer.toString());
+        HashMap hashMap = new HashMap<String,String>();
+        hashMap.put("key","value");
+
+        Iterator<Map.Entry<String,String>> iterator = hashMap.entrySet().iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().getKey()+" ");
+        }
+    }
+
+    private static void modify(StringBuffer stringBuffer) {
+        stringBuffer.append(" modify");
     }
 
 }

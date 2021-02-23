@@ -49,6 +49,7 @@ public class StreamStudy {
         // 将集合转换为流
         Stream<People> stream =  list.stream();
         Optional<People> people = stream.filter(x -> x.getAge() >50).findFirst();
+        stream.filter(x -> x.getSalary() >5000);
         System.out.println(people.orElseGet((Supplier<? extends People>) new People()));
 
         /**
