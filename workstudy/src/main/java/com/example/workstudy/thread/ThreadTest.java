@@ -74,7 +74,7 @@ public class ThreadTest {
        ThreadExtends thread =  new ThreadExtends();
        thread.start();
        Thread.sleep(1000);
-       thread.setFlag(false);
+       //thread.setFlag(false);
     }
 
     public static void method5(String[] args) {

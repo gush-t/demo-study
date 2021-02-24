@@ -3,6 +3,7 @@ package com.example.workstudy.thread;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 
 public class ThreadExtends extends Thread{
 
@@ -55,7 +56,7 @@ public class ThreadExtends extends Thread{
         }
     }*/
 
-    @Override
+    /*@Override
     public void run() {
         while (flag){
             System.out.println("interrupt");
@@ -71,5 +72,22 @@ public class ThreadExtends extends Thread{
 
     public  void setFlag(boolean flag) {
         this.flag = flag;
+    }*/
+
+    @Override
+    public void run() {
+
+        synchronized (str){
+            try {
+                System.out.println("release: " +Thread.currentThread().getName()+ "sleep");
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("release: " +Thread.currentThread().getName()+ "lock");
+                str.wait();
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("release: " +Thread.currentThread().getName()+ "lock2");
+        }
     }
 }
