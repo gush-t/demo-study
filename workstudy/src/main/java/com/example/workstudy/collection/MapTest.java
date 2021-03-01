@@ -48,6 +48,5 @@ public class MapTest {
             System.out.println(map.size());
             TimeUnit.SECONDS.sleep(1);
         }
-
     }
 }
