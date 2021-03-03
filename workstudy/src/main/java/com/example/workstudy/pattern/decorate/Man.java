@@ -2,6 +2,8 @@ package com.example.workstudy.pattern.decorate;
 
 import com.example.workstudy.pattern.People;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class Man implements People {
     @Override
     public String getName() {
