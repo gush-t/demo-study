@@ -8,9 +8,11 @@ public class ParkTest {
         char[] chars = {1,0,1};
         Arrays.toString(chars);
         String str = "110011101";
-        String[] strings =  str.split("0");
-        for (int i = 0; i <strings.length; i++) {
-            System.out.println(strings[i].length());
-        }
+        System.out.println(min(0,2,3));
+    }
+    private static int min(int i, int i1, int i2) {
+        int min01 = Math.min(i,i1);
+        int min02 = Math.min(i1,i2);
+        return Math.min(min01,min02);
     }
 }

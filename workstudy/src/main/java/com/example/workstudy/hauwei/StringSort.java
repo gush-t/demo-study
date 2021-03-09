@@ -2,6 +2,15 @@ package com.example.workstudy.hauwei;
 
 
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.GenericApplicationContext;
+
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
