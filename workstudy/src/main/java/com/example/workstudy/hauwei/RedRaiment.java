@@ -8,7 +8,16 @@ public class RedRaiment {
     /**
      * 梅花桩
      * 升序排列
-     * 从i开始，升序序列，如果符合条件+1，累计的数据存储在数组中
+     * 最大升序子序列
+     * 举例：[1,5,3,2,6]
+     * i=0 , Array[i] = 1 stepNumber[i] =1
+     * i=1 , Array[i] = 5 stepNumber[i] =2
+     * 因为stepNumber[i] > stepNumber[i-1]; stemNumber[i] = stemNumber[i]+1
+     * i=2 , Array[i] = 3 stepNumber[i] =1
+     * i=3 , Array[i] = 2 stepNumber[i] =1
+     * i=4 , Array[i] = 6 stepNumber[i] =1
+     * 因为stepNumber[i] > stepNumber[0,1,2,3]，; stemNumber[i] = Max(stemNumber[i])+1
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -16,19 +25,17 @@ public class RedRaiment {
         while (scanner.hasNext()){
             int size = Integer.parseInt(scanner.nextLine());
             String strNumber = scanner.nextLine();
+            //存储升序子序列的数组
             Integer[] integers = new Integer[size];
+            //数据的数值数组
             String[] strings = strNumber.split(" ");
-            int temp;
             for (int i = 0; i < strings.length; i++) {
-                temp = Integer.parseInt(strings[i]);
-                int count=1;
-                for (int j = i+1; j < strings.length; j++) {
-                    if (temp < Integer.parseInt(strings[j])){
-                        temp = Integer.parseInt(strings[j]);
-                        count++;
+                integers[i] = 1;
+                for (int j = 0; j < i; j++) {
+                    if ( Integer.parseInt(strings[i]) > Integer.parseInt(strings[j])){
+                        integers[i] = Math.max(integers[i], integers[i]=integers[j]+1);
                     }
                 }
-                integers[i] = count;
             }
             System.out.println(Arrays.stream(integers).max((x,y) -> x.compareTo(y)).get());
         }
