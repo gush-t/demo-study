@@ -1,0 +1,25 @@
+#单个数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    password: gu784341
+#mybatisPlus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.demo01mybatisplus.entity
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+#日志文件开启
+logging:
+  level:
+    com:
+      example:
+        demo01mybatisplus:
+          entity: debug

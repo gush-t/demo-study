@@ -5,7 +5,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Range {
-
     /**
      * 问题分析：
      * 1. 柱子高度无序
@@ -39,7 +38,6 @@ public class Range {
                 }
             }
             System.out.println(result.stream().max(BigInteger::compareTo).get());
-
         }
 
     }
