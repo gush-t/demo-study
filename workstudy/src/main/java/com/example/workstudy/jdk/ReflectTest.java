@@ -1,5 +1,10 @@
 package com.example.workstudy.jdk;
 
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
+import org.springframework.context.annotation.Bean;
+
 public class ReflectTest {
 
     /**
@@ -64,7 +69,5 @@ public class ReflectTest {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         Fruit fruit = Factory.getFruit("ReflectTest.Orange");
     }
-
-
 
 }

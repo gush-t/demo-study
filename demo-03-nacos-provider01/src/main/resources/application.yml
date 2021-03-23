@@ -1,0 +1,25 @@
+#数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot
+    username: root
+    password: gu784341
+  application:
+    name: demo-03-provider
+#cloud nacos 配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        service: ${spring.application.name}
+        username: nacos
+        password: nacos
+#服务器
+server:
+  port: 8080
+#mybatisplus
+
+
+
+#应用名

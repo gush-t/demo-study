@@ -24,8 +24,7 @@ public class XlsxRead {
      * @param args
      */
     public static void main(String[] args) throws IOException {
-        String fileName = "D:\\chatRecord\\WChat\\WeChat Files\\wxid_9qdj8w8gd3pg22" +
-                "\\FileStorage\\File\\2021-03\\Session.xlsx";
+        String fileName = "D:\\WorkDocument\\word.xlsx";
         InputStream inputStream = new FileInputStream(fileName);
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
         XSSFSheet xssfSheet = workbook.getSheetAt(0);
@@ -36,7 +35,7 @@ public class XlsxRead {
         int time = 0;
         while (iterator.hasNext()){
             xssfRow = (XSSFRow) iterator.next();
-            XSSFCell url =  xssfRow.getCell(2);
+            XSSFCell url =  xssfRow.getCell(3);
             stringBuffer.append("'");
             stringBuffer.append(url.getStringCellValue());
             stringBuffer.append("', ");
