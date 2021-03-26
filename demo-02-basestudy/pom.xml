@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>demo-01-mybatisplus</artifactId>
+    <artifactId>demo-01-basestudy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-01-mybatisplus</name>
+    <name>demo-01-basestudy</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

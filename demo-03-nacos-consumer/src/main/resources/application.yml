@@ -6,8 +6,9 @@ spring:
     username: root
     password: gu784341
   application:
-    name: demo-03-provider
-#cloud nacos 配置
+    name: demo-03-consumer
+
+  #cloud nacos 配置
   cloud:
     nacos:
       discovery:
@@ -17,7 +18,7 @@ spring:
         password: nacos
 #服务器
 server:
-  port: 28080
+  port: 18080
 #mybatisplus
 
 
