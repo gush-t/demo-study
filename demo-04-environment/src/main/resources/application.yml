@@ -25,4 +25,6 @@ logging:
           entity: debug
 
 #用户数据装配
-
+user:
+  password: gushaohua
+  username: nihao
