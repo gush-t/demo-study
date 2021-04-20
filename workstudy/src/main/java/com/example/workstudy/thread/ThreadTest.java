@@ -85,6 +85,9 @@ public class ThreadTest {
         System.out.println(i);
     }
 
+
+
+
     public static void method6(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(10);
         ThreadImpl thread = new ThreadImpl(countDownLatch);
